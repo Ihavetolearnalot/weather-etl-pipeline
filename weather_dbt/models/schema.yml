@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: weather_summary
+    description: "Tägliche Wetterzusammenfassung pro Stadt"
+    columns:
+      - name: city
+        description: "Name der Stadt"
+        tests:
+          - not_null        # Stadt darf nie leer sein
+          - accepted_values: # Nur diese Städte sind erlaubt
+              values: ['Heilbronn', 'Stuttgart', 'Frankfurt']
+      
+      - name: datum
+        description: "Datum der Messung"
+        tests:
+          - not_null        # Datum darf nie leer sein
+      
+      - name: avg_temp
+        description: "Durchschnittstemperatur in °C"
+        tests:
+          - not_null        # Temperatur darf nie leer sein

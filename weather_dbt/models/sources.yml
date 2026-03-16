@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: main                    # Name des Schemas in DuckDB
+    database: weather             # Name der Datenbank
+    tables:
+      - name: weather_raw         # Unsere Tabelle aus load.py
+      - name: weather_transformed # Unsere transformierte Tabelle
